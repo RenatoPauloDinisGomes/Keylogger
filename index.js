@@ -1,5 +1,4 @@
 "use strict";
-const configs = require('./configs.json');
 const fs = require('fs');
 const schedule = require('node-schedule');
 const fileControler = require('./controlers/fileControler');
@@ -9,5 +8,11 @@ rule.second = 10;
 
 
 const fileTask = schedule.scheduleJob(rule, function() {
-  fileControler.add(configs.filename, "key");
+  fileControler.add("key");
+});
+const rule2 = new schedule.RecurrenceRule();
+rule2.second = 20;
+
+const fileTask2 = schedule.scheduleJob(rule2, function() {
+  fileControler.delete();
 });
