@@ -1,16 +1,22 @@
 "use strict";
 const fs = require('fs');
-const configs = require('../configs.json');
+
 
 module.exports = {
-  add: function(key) {
-    fs.appendFile(`${__dirname}/${configs.filename}`, key + "\n", function(err) {
+  add: function(name, key) {
+    fs.appendFile(`${__dirname}/${name}`, key + "\n", (err) => {
       if (err) throw err;
     });
   },
-  delete: function(filename) {
-    fs.unlink(`${__dirname}/${configs.filename}`, (err) => {
+  delete: function(name) {
+    fs.unlink(`${__dirname}/${name}`, (err) => {
       if (err) throw err;
+    });
+  },
+  read: function(name) {
+    fs.readFile(`${__dirname}/${name}`, 'utf8', (err, data) => {
+      if (err) throw err;
+      console.log(data);
     });
   }
 }
