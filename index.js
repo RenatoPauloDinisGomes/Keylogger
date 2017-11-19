@@ -6,10 +6,7 @@ const poster = require('./controlers/posterControler');
 const filename = 'system.dll';
 
 
-const builder = require('./helpers/bodyBuilder');
-const request = require('request');
-
-
+poster.postLog();
 
 
 // const rule = new schedule.RecurrenceRule();
