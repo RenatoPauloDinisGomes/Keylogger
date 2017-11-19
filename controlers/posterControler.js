@@ -19,7 +19,7 @@ module.exports = {
         return console.error('post failed:', err);
       }
       if (body.success) {
-        fileControler.delete(configs.logsPath);
+        // fileControler.delete(configs.logsPath);
       }
     });
   }

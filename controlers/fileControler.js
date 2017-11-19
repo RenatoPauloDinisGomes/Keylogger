@@ -9,6 +9,7 @@ module.exports = {
   },
   delete: function(name) {
     fs.unlink(`${__dirname}/${name}`, (err) => {
+      // if (err) throw err;
     });
   },
   read: function(name) {
