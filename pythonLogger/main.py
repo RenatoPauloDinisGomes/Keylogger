@@ -3,7 +3,7 @@ import json
 import logging
 
 log_dir = '../'
-filename = 'system.dll'
+filename = 'system.dll' #must match name in configs.json
 
 print(filename)
 

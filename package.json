@@ -11,6 +11,5 @@
   "dependencies": {
     "node-schedule": "^1.2.5",
     "request": "^2.83.0",
-    "tty": "^1.0.1"
   }
 }
