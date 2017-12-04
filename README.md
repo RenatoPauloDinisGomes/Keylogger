@@ -21,6 +21,3 @@ License
 ----
 
 Distributed under the MIT License.
-
-
-**Free Software, Hell Yeah!**
